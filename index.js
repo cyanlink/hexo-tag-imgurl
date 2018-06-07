@@ -1,9 +1,9 @@
 'use strict';
 
 var hexoUtil = require('hexo-util');
-var imgUrl = hexo.config.imgurl;
-var httpsMod = hexo.config.httpsMod;
-var rImgAttr = /[\:]+/;
+//var imgUrl = hexo.config.imgurl;
+//var httpsMod = hexo.config.httpsMod;
+var rImgAttr = /[\:]/;
 var rImgUrl = /(.png|.jpg|.gif|.bmp){1}/;
 
 /**
@@ -22,7 +22,7 @@ hexo.extend.tag.register('imgurl', function(args){
   for (var i = 0; i < args.length; i++) {
     var item = args[i];
 
-    if (rImgAttr.test(item)) {
+    if (rImgAttr.test(item) && (!rImgUrl.test(item))) {
 
       if (item[0] === '\'' || item[0] === '"') {
         item = item.substring(1, item.length - 1);
@@ -32,16 +32,16 @@ hexo.extend.tag.register('imgurl', function(args){
       
       imgAttr[parseAttr[0]] = parseAttr[1];
       } else if (rImgUrl.test(item)) {
-        let protocol = function(httpsMod) {
-          if (httpsMod === true) {
+        /*let protocol = function(httpsMod) {
+          if (httpsMod == true) {
             return "https://"
-          } else if (httpsMod === false) {
+          } else if (httpsMod == false) {
             return "http://"
           } else {
             return "//"
           }
-        }
-        imgAttr.src = protocol(httpsMod) + imgUrl + "/" + item;
+        }*/
+        imgAttr.src = /*protocol(httpsMod) + imgUrl + "/"*/item;
       } else {
         imgAttr.class = item.split(',').join(' ');
       }
