@@ -1,3 +1,13 @@
+# Modifier Notes
+
+This project is a fork of original hexo-tag-imgurl plugin.
+
+I have modified the code a little so that you don't need to config the imgurl,
+
+New usage: 
+
+{% imgurl https://test.com/test-post/test.png full-image alt:test title:hello%} and so on.
+
 # Introduction
 
 [![npm](https://img.shields.io/npm/v/hexo-tag-imgurl.svg?style=flat-square)](https://www.npmjs.com/package/hexo-tag-imgurl)  [![npm](https://img.shields.io/npm/dm/hexo-tag-imgurl.svg?style=flat-square)](https://www.npmjs.com/package/hexo-tag-imgurl)  [![npm](https://img.shields.io/npm/dt/hexo-tag-imgurl.svg?style=flat-square)](https://www.npmjs.com/package/hexo-tag-imgurl)  [![npm](https://img.shields.io/npm/l/hexo-tag-imgurl.svg?style=flat-square)](https://www.npmjs.com/package/hexo-tag-imgurl)
